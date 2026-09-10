@@ -1,35 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-sclae=1.0">
-        <title> Publishing website</title>
-    </head>
-    <body> 
-        <h1> WELCOME TO ATIF AFRIDI RESUME</h1>
-        <P> Hy my name is Atif Afridi. I am a  civil engineer which i have completed in 2019 . </Pl><br>
-        <p> I have two years of experience</p>
-        <table border="1">
-            <tr> 
-                <th> Degree</th>
-                <th>experience</th>
-            </tr>
-             <tr> 
-                 <td>CIVIL engineering</td>
-                 <td> 2 years</td>
-            </tr>
-                 <h2> Experience in developing sites</h2>
-                 <form>
-                    <ol type="1">
-                        <li>
-                    <label for="autocad">autocad</label>
-                    <input type="checkbox", name="site" id="autocad" ><br></li>
-                   <li> <label for="java">java</label>
-                    <input type="checkbox", id="java", name="site"><br></li>
-                   <li>  <label for="html">html</label>
-                    <input type="checkbox", id="html", name="site"></li>
-                    </ol>
-                 </form>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Style Furnishers - Wholesale Furniture">
+<title>Style Furnishers | Wholesale Furniture</title>
+<style>
+:root{
+  --primary:#8b5e34;--primary-dark:#65401f;--cream:#f7f2ea;--dark:#211b16;
+  --white:#fff;--muted:#756b62;--border:#e7ddd1;--shadow:0 10px 30px rgba(45,30,15,.10)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#fcfaf7;color:var(--dark);line-height:1.5}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0}
+.container{width:min(1180px,92%);margin:auto}
+header{background:var(--dark);color:white;position:sticky;top:0;z-index:1000;box-shadow:0 3px 15px #0002}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:800;letter-spacing:.5px}.logo span{color:#d9a66f}
+nav{display:flex;gap:22px}nav a{color:#eee;text-decoration:none;font-weight:600}nav a:hover{color:#d9a66f}
+.menu{display:none;background:none;color:#fff;font-size:26px}
+.hero{background:linear-gradient(120deg,#2a211aee,#2a211aaa),url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1800&q=80") center/cover;min-height:540px;color:#fff;display:flex;align-items:center}
+.hero-content{max-width:650px}.tag{display:inline-block;background:#d9a66f;color:#2b2119;padding:7px 13px;border-radius:20px;font-weight:700;margin-bottom:16px}
+h1{font-size:clamp(42px,7vw,70px);line-height:1.02;margin-bottom:20px}.hero p{font-size:19px;color:#eee;margin-bottom:28px}
+.btn{display:inline-block;padding:13px 20px;border-radius:7px;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;margin-right:8px}.btn:hover{background:var(--primary-dark)}
+.btn.light{background:#fff;color:var(--dark)}.btn.danger{background:#b33a32}.btn.small{padding:8px 12px;font-size:13px}
+section{padding:70px 0}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:36px}.section-title p{color:var(--muted)}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}.cat{background:#fff;border:1px solid var(--border);padding:24px 10px;text-align:center;border-radius:10px;box-shadow:var(--shadow);font-weight:700;cursor:pointer}.cat:hover{transform:translateY(-3px);transition:.2s;border-color:#c9a57d}.cat .icon{font-size:35px;margin-bottom:7px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:25px}.toolbar input,.toolbar select{padding:12px;border:1px solid var(--border);border-radius:7px;background:#fff}.search{flex:1;min-width:220px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}.product img{width:100%;height:210px;object-fit:cover;background:#eee}.product-body{padding:17px;display:flex;flex-direction:column;flex:1}.badge{font-size:11px;text-transform:uppercase;color:var(--primary);font-weight:800}.product h3{margin:4px 0}.desc{font-size:13px;color:var(--muted);margin-bottom:12px}.price{font-size:20px;font-weight:800;margin-top:auto;margin-bottom:12px}.product-actions{display:flex;gap:7px}.product-actions button{flex:1}
+.empty{text-align:center;padding:45px;color:var(--muted);grid-column:1/-1}
+.about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.about img{width:100%;border-radius:12px}.about h2{font-size:38px;margin-bottom:15px}.about p{color:var(--muted);margin-bottom:15px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.contact-card{padding:25px;background:#fff;border:1px solid var(--border);border-radius:10px;text-align:center}.contact-card .icon{font-size:30px}
+footer{background:var(--dark);color:#ddd;padding:35px 0;text-align:center}
+.admin{background:var(--cream);border-top:1px solid var(--border)}.admin-box{background:#fff;padding:28px;border-radius:12px;box-shadow:var(--shadow)}.admin-box h2{margin-bottom:5px}.admin-box>p{color:var(--muted);margin-bottom:20px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-weight:700;font-size:14px}.field input,.field select,.field textarea{padding:11px;border:1px solid var(--border);border-radius:7px}.field textarea{min-height:85px;resize:vertical}.admin-actions{margin-top:16px;display:flex;gap:8px}.preview{width:100px;height:70px;object-fit:cover;border-radius:6px;margin-top:8px;display:none}
+.notice{background:#fff8e9;border:1px solid #ecd6a5;padding:12px;border-radius:7px;margin:15px 0;color:#664b20;font-size:13px}
+@media(max-width:900px){.products{grid-template-columns:repeat(3,1fr)}.categories{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){nav{display:none}.menu{display:block}.nav.open nav{display:flex;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:20px;flex-direction:column}.products{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{min-height:470px}.product img{height:170px}}
+@media(max-width:430px){.products{grid-template-columns:1fr}.categories{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
 
-    </body>
+<header>
+  <div class="container nav" id="nav">
+    <div class="logo">STYLE <span>FURNISHERS</span></div>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <nav>
+      <a href="#home">Home</a><a href="#products">Furniture</a><a href="#about">About</a>
+      <a href="#contact">Contact</a><a href="#admin">Manage Items</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <span class="tag">WHOLESALE FURNITURE</span>
+    <h1>Furniture That Defines Your Space.</h1>
+    <p>Quality furniture at wholesale prices. Explore our collection of chairs, tables, beds, sofas and more.</p>
+    <a class="btn" href="#products">View Furniture</a>
+    <a class="btn light" href="#contact">Contact Us</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title"><h2>Shop By Category</h2><p>Choose a category to see available furniture.</p></div>
+    <div class="categories">
+      <div class="cat" onclick="filterCategory('Chairs')"><div class="icon">🪑</div>Chairs</div>
+      <div class="cat" onclick="filterCategory('Tables')"><div class="icon">🪵</div>Tables</div>
+      <div class="cat" onclick="filterCategory('Beds')"><div class="icon">🛏️</div>Beds</div>
+      <div class="cat" onclick="filterCategory('Sofas')"><div class="icon">🛋️</div>Sofas</div>
+      <div class="cat" onclick="filterCategory('Cabinets')"><div class="icon">🗄️</div>Cabinets</div>
+      <div class="cat" onclick="filterCategory('Other')"><div class="icon">🏠</div>Other</div>
+    </div>
+  </div>
+</section>
+
+<section id="products" style="padding-top:20px">
+  <div class="container">
+    <div class="section-title"><h2>Our Furniture</h2><p>Wholesale furniture for shops, offices, homes and businesses.</p></div>
+    <div class="toolbar">
+      <input class="search" id="search" placeholder="Search furniture..." oninput="renderProducts()">
+      <select id="categoryFilter" onchange="renderProducts()">
+        <option value="All">All Categories</option><option>Chairs</option><option>Tables</option>
+        <option>Beds</option><option>Sofas</option><option>Cabinets</option><option>Other</option>
+      </select>
+    </div>
+    <div class="products" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80" alt="Furniture showroom">
+    <div>
+      <h2>About Style Furnishers</h2>
+      <p>Style Furnishers is a wholesale furniture business focused on quality, attractive designs and competitive prices.</p>
+      <p>Whether you need furniture for a retail shop, office, hotel, restaurant or home, our collection gives you practical choices at wholesale rates.</p>
+      <a class="btn" href="#contact">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title"><h2>Contact Style Furnishers</h2><p>Replace the details below with your actual business information.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="icon">📞</div><h3>Phone</h3><p>+92 300 0000000</p></div>
+      <div class="contact-card"><div class="icon">💬</div><h3>WhatsApp</h3><p><a id="whatsappLink" href="#" target="_blank">Chat on WhatsApp</a></p></div>
+      <div class="contact-card"><div class="icon">📍</div><h3>Location</h3><p>Your City, Pakistan</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="admin" id="admin">
+  <div class="container">
+    <div class="section-title"><h2>Manage Furniture</h2><p>Add, edit or remove products from your website.</p></div>
+    <div class="admin-box">
+      <h2 id="formTitle">Add New Item</h2>
+      <p>Products are stored in this browser using local storage.</p>
+      <div class="notice">⚠️ Important: GitHub Pages is a static website. Items you add here are saved only in the browser/device where you add them. They are not automatically shared with other customers. For a shared online inventory, a database/backend is needed.</div>
+      <form id="productForm">
+        <div class="form-grid">
+          <div class="field"><label>Item Name *</label><input id="name" required placeholder="e.g. Royal Wooden Chair"></div>
+          <div class="field"><label>Category *</label><select id="category" required><option>Chairs</option><option>Tables</option><option>Beds</option><option>Sofas</option><option>Cabinets</option><option>Other</option></select></div>
+          <div class="field"><label>Wholesale Price</label><input id="price" placeholder="e.g. Rs. 8,500"></div>
+          <div class="field"><label>Item Code / SKU</label><input id="sku" placeholder="e.g. SF-001"></div>
+          <div class="field full"><label>Description</label><textarea id="description" placeholder="Describe the material, size, color, etc."></textarea></div>
+          <div class="field full"><label>Product Image</label><input id="image" type="file" accept="image/*" onchange="previewImage(event)"><img id="preview" class="preview" alt="Preview"></div>
+        </div>
+        <div class="admin-actions">
+          <button class="btn" type="submit" id="saveBtn">Add Item</button>
+          <button class="btn" type="button" style="background:#777" onclick="resetForm()">Clear</button>
+        </div>
+      </form>
+      <div id="adminList" style="margin-top:30px"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container"><strong>STYLE FURNISHERS</strong><br>Wholesale Furniture • Quality • Style • Value<br><small>© <span id="year"></span> Style Furnishers. All rights reserved.</small></div></footer>
+
+<script>
+const defaultProducts=[
+ {id:1,name:"Classic Wooden Chair",category:"Chairs",price:"Rs. 4,500",sku:"SF-001",description:"Strong wooden chair suitable for dining rooms, offices and restaurants.",image:"https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80"},
+ {id:2,name:"Modern Dining Table",category:"Tables",price:"Rs. 28,000",sku:"SF-002",description:"Elegant dining table with a durable finish and spacious top.",image:"https://images.unsplash.com/photo-1617098900591-3f90928e8c54?auto=format&fit=crop&w=900&q=80"},
+ {id:3,name:"Luxury Double Bed",category:"Beds",price:"Rs. 45,000",sku:"SF-003",description:"Modern double bed design suitable for bedrooms and hotels.",image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"},
+ {id:4,name:"Comfort Sofa Set",category:"Sofas",price:"Rs. 65,000",sku:"SF-004",description:"Comfortable sofa set with a stylish design for homes and offices.",image:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80"}
+];
+
+let products=JSON.parse(localStorage.getItem("styleFurnishersProducts"))||defaultProducts;
+let editId=null;
+
+function save(){localStorage.setItem("styleFurnishersProducts",JSON.stringify(products))}
+function renderProducts(){
+ const grid=document.getElementById("productGrid"), q=document.getElementById("search").value.toLowerCase(), cat=document.getElementById("categoryFilter").value;
+ const list=products.filter(p=>(cat==="All"||p.category===cat)&&(p.name.toLowerCase().includes(q)||p.description.toLowerCase().includes(q)||p.sku.toLowerCase().includes(q)));
+ grid.innerHTML=list.length?list.map(p=>`<article class="product">
+   <img src="${p.image||placeholder(p.category)}" alt="${escapeHtml(p.name)}" onerror="this.src='${placeholder(p.category)}'">
+   <div class="product-body"><span class="badge">${escapeHtml(p.category)}</span><h3>${escapeHtml(p.name)}</h3>
+   <div class="desc">${escapeHtml(p.description||"Quality furniture from Style Furnishers.")}</div>
+   <div class="price">${escapeHtml(p.price||"Contact for price")}</div>
+   <div class="product-actions"><button class="btn small" onclick="orderItem(${p.id})">Enquire</button></div></div>
+ </article>`).join(""):`<div class="empty">No furniture found. Try another search or category.</div>`;
+ renderAdmin();
+}
+function renderAdmin(){
+ const box=document.getElementById("adminList");
+ box.innerHTML="<h3>Current Items ("+products.length+")</h3><div style='margin-top:10px;display:grid;gap:8px'>"+
+ products.map(p=>`<div style="border:1px solid var(--border);padding:10px;border-radius:7px;display:flex;align-items:center;gap:10px;justify-content:space-between">
+ <span><strong>${escapeHtml(p.name)}</strong> — ${escapeHtml(p.category)} — ${escapeHtml(p.price||"No price")}</span>
+ <span><button class="btn small" onclick="editProduct(${p.id})">Edit</button> <button class="btn small danger" onclick="deleteProduct(${p.id})">Delete</button></span></div>`).join("")+"</div>";
+}
+function placeholder(cat){return "https://placehold.co/900x650/e9e0d5/5b4633?text="+encodeURIComponent(cat)}
+function escapeHtml(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+function previewImage(e){const f=e.target.files[0],p=document.getElementById("preview");if(f){p.src=URL.createObjectURL(f);p.style.display="block"}}
+document.getElementById("productForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const file=document.getElementById("image").files[0];
+ let image=editId?products.find(p=>p.id===editId).image:"";
+ if(file) image=await fileToDataURL(file);
+ const item={id:editId||Date.now(),name:name.value.trim(),category:category.value,price:price.value.trim(),sku:sku.value.trim(),description:description.value.trim(),image:image||placeholder(category.value)};
+ if(editId) products=products.map(p=>p.id===editId?item:p); else products.push(item);
+ save();resetForm();renderProducts();alert(editId?"Item updated successfully!":"Item added successfully!");
+});
+function fileToDataURL(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)})}
+function editProduct(id){
+ const p=products.find(x=>x.id===id);if(!p)return;editId=id;
+ name.value=p.name;category.value=p.category;price.value=p.price||"";sku.value=p.sku||"";description.value=p.description||"";
+ document.getElementById("formTitle").textContent="Edit Item";document.getElementById("saveBtn").textContent="Update Item";
+ if(p.image){preview.src=p.image;preview.style.display="block"} location.hash="admin";
+}
+function deleteProduct(id){if(confirm("Delete this item?")){products=products.filter(p=>p.id!==id);save();renderProducts()}}
+function resetForm(){editId=null;document.getElementById("productForm").reset();preview.style.display="none";document.getElementById("formTitle").textContent="Add New Item";document.getElementById("saveBtn").textContent="Add Item"}
+function filterCategory(c){categoryFilter.value=c;document.getElementById("search").value="";renderProducts();document.getElementById("products").scrollIntoView({behavior:"smooth"})}
+function orderItem(id){const p=products.find(x=>x.id===id);const phone="923000000000";const text=encodeURIComponent("Hello Style Furnishers, I am interested in: "+p.name+(p.sku?" ("+p.sku+")":"")+". Please send wholesale details.");window.open("https://wa.me/"+phone+"?text="+text,"_blank")}
+function toggleMenu(){document.getElementById("nav").classList.toggle("open")}
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("whatsappLink").href="https://wa.me/923000000000?text="+encodeURIComponent("Hello Style Furnishers, I would like to enquire about your wholesale furniture.");
+renderProducts();
+</script>
+</body>
 </html>
